@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class TodoManagementWithSpringSecurityApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TodoManagementWithSpringSecurityApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TodoManagementWithSpringSecurityApplication.class, args);
+    }
 
 }
