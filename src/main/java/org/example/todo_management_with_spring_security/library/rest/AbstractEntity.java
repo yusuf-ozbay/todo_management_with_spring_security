@@ -12,20 +12,20 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Getter
-@MappedSuperclass
+@MappedSuperclass //Bu sınıf entity sınıfı değildir,ancak diğer entity sınıfları tarafından kalıtım yoluyla kullanılabilir ve bu sınıftan türeyen sınıflar bu sınıftaki field'ları kullanır
 @EntityListeners(AuditingEntityListener.class)
-@EqualsAndHashCode(of = "id")
+@EqualsAndHashCode(of = "id")//Bu sınıf için equals() ve hashCode() metodlarını otomatik olarak oluşturur.ve id'ye göre çalışmasını sağlar
 
 public abstract class AbstractEntity implements Serializable {
 
     @Id
     @Column
     @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid2")//UUID'nin nasıl üretileceğini belirtir  uuid2 standart bir UUID iretim stratejisidir
     private String id;
 
     @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP) // veritabanında bir tarih-saat (timestamp) türünde saklanacağını belirtir.
     @Column(nullable = false)
     private Date created;
 

@@ -21,7 +21,7 @@ import java.util.Date;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)//JPA'nın auditing özelliğini etkinleştirir. @CreatedDate ve @LastModifiedDate alanları otomatik olarak doldurulur.
 public class Todo extends AbstractEntity {
     public static final String TABLE = "todo";
     private static final String TITLE = "title";
@@ -30,7 +30,8 @@ public class Todo extends AbstractEntity {
     private static final String PRIORITY = "priority";
     private static final String STATUS = "status";
     private static final String ASSIGNMENT_TO_USER = "assignment_to_user";
-
+    //static, bu değişkenlerin sınıfın bir nesnesi oluşturulmadan kullanılmasını sağlar.
+    //final, bu değişkenlerin değerleri bir kez atandıktan sonra değiştirilemez(title) titl olamaz.
     @Column(name = TITLE)
     private String title;
 
