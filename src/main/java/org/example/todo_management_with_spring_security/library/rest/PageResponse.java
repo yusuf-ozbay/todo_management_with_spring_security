@@ -9,10 +9,13 @@ import org.springframework.data.domain.Page;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PageResponse<T> {
-    private Page<T> items = Page.empty();
+    //Sayfalama yapısındaki veriyi tutan bir sınıftır.
+    // Her sayfada belirli sayıda öğe bulunur ve kullanıcılar bu sayfalara erişebilir.
+
+    private Page<T> items = Page.empty(); //Gelen Page<T> (sayfa yapısındaki veri).
 
     @Override
-    public String toString() {
+    public String toString() {  //: Veriyi string formatında döndürür. Sayfa içindeki her öğeyi ayrı ayrı yazdırır.
         StringBuilder sb = new StringBuilder("pageItems: ");
         if(items != null){
             items.forEach(item -> {

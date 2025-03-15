@@ -3,8 +3,10 @@ package org.example.todo_management_with_spring_security.library.exceptiontutori
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.NOT_FOUND)
+@ResponseStatus(HttpStatus.NOT_FOUND) //otomatik olarak 404 hatası fırlatması için
 public class ResourceNotFoundException extends RuntimeException {
+
+    //kaynağın bulunamadığı durumlarda fırlatılan özel bir istisnadır
     private String resourceName;
     private String fieldName;
     private String fieldValue;

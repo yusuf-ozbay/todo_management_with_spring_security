@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class Response<T> {
+    // başarılı bir ürün listeleme işlemi yaptığınızda,
+    // yanıt şu şekilde olur: { data: ürün listesi, meta: işlem başarılı }.
+
     private T data;
     private MetaResponse meta;
 

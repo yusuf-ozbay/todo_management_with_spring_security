@@ -10,6 +10,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DataResponse<T> {
+    //bir liste halinde gelen veriyi ve o listedeki öğelerin sayısını dönen bir response yapısıdır.
+
     private List<T> items = List.of();
     private Integer numberOfItems ;
 

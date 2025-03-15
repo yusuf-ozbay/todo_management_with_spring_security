@@ -11,6 +11,9 @@ import org.example.todo_management_with_spring_security.library.enums.MessageCod
 @AllArgsConstructor
 @ToString
 public class MetaResponse {
+    //API yanıtlarına işlem durumu (başarılı, hata, vs.) gibi meta bilgiler eklemek için kullanılır.
+    // Bu sayede istemci (client), işlem sonucunu kolayca anlayabilir.
+
     private String code;
     private String description;
 
@@ -18,7 +21,7 @@ public class MetaResponse {
         return new MetaResponse(code, description);
     }
 
-    public static MetaResponse success() {
+    public static MetaResponse success() { //başarı durumunda bir meta response sağlar
         return new MetaResponse(MessageCodes.SUCCESS.getCode(), MessageCodes.SUCCESS.getMessage());
     }
 

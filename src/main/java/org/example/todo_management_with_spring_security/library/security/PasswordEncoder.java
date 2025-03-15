@@ -9,7 +9,7 @@ public class PasswordEncoder {
 
     //BCryptPasswordEncoder: Spring Security tarafından sağlanan bir şifreleme sınıfıdır.
     //Bu sınıf, BCrypt algoritmasını kullanarak şifreleri hash'ler (şifreler)
-    // .çünkü şifreleerimizi düz metin şeklinde tutmamamız gerekir
+    // çünkü şifreleerimizi düz metin şeklinde tutmamamız gerekir
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
